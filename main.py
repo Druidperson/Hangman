@@ -2,7 +2,6 @@ from random import choice
 
 
 def main():
-
     player_win = 0
     player_lose = 0
 
