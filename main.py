@@ -8,6 +8,7 @@ while True:
     player_option = input('Type "play" to play the game, "results" to show the scoreboard, and "exit" to quit:')
     if player_option == "play":
         # Initial setup
+        # Javascript is longer so it is expected that the game cannot be won if your word to guess is "javascript"
         word_to_guess = choice(["python", "java", "swift", "javascript"])
         hint = "-" * len(word_to_guess)
         print(hint)
