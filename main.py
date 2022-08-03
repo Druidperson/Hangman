@@ -2,6 +2,7 @@ from random import choice
 
 
 def main():
+
     player_win = 0
     player_lose = 0
 
@@ -10,7 +11,7 @@ def main():
         player_option = input('Type "play" to play the game, "results" to show the scoreboard, and "exit" to quit:')
         if player_option == "play":
             # Initial setup
-            word_to_guess = choice(["python", "java", "swift", "javascript"])
+            word_to_guess = choice(["python", "java", "swift", "kotlin"])
             hint = "-" * len(word_to_guess)
             print(hint)
 
@@ -21,18 +22,15 @@ def main():
             hint = list(hint)
             already_guessed = []
 
-
             def update_hint():
                 # Update hint to show letters that have already been guessed.
                 for i in range(0, len(word_to_guess)):
                     if word_to_guess[i] == user_guess:
                         hint[i] = user_guess
 
-
             def take_input():
                 guess = input("Input a letter: ")
                 return guess
-
 
             while tries_left > 0:
                 user_guess = take_input()
@@ -73,6 +71,7 @@ def main():
             else:
                 player_lose += 1
                 print("You lost!")
+
         elif player_option == "results":
             print(f"You won: {player_win} times")
             print(f"You lost: {player_lose} times")
